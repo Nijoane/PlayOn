@@ -10,7 +10,7 @@
   
   .Menu {
     width: 100%;
-    height: 94px;
+    height: 90px;
     z-index: 100;
   
     display: flex;
@@ -62,8 +62,9 @@
 
   .ButtonLink:hover,
   .ButtonLink:focus {
-    color: #FC0029;
     opacity: .5;
+    color: #FF6347;
+    border-color: #FF6347;
   }
   
   @media (max-width: 800px) {

@@ -10,8 +10,8 @@
   --grayLight: #F5F5F5;
   --grayMedium: #e5e5e5; 
   --white: #ffffff;
-  --frontEnd: #6BD1FF;
-  --backEnd: #00C86F;
+  --frontEnd: #ffffff;
+  --backEnd: #ffffff;
 }
 
 html,
@@ -23,3 +23,25 @@ body {
 a {
   color: inherit;
 } 
+
+#root {
+  min-height: calc(100vh - var(--bodyPaddingTop));
+  display: flex;
+  flex-direction: column;
+}
+
+.PageNotFound{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.PageNotFound h1{
+  color: tomato;
+  font-size: 30px;
+  padding-top: 3%;
+}
+
+.Cartoon{
+  padding-top: 5%;
+}

@@ -1,0 +1,32 @@
+.Banner{
+    display: flex;
+    flex-direction: row;    
+    height: 100%;
+    min-height: 100vh;
+    padding-top: 5%;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    background-color: var(--white);
+}
+
+.TextBanner{
+    display: flex;
+    flex-direction: column;
+    padding-top: 25vh;
+    padding-left: 20vh;
+}
+
+.TextBanner h1{
+    font-size: 35px;
+}
+
+.TextBanner p{
+    margin-top: 0; ;
+    font-size: 18px;
+}
+.BackgroundImage{
+    max-height: 80vh;
+    padding-top: 5%;
+    padding-left: 3vh;
+    padding-right: 15vh;
+}

@@ -1,45 +1,19 @@
 import React from 'react';
-import VideoIframeResponsive from './components/VideoIframeResponsive';
-import { BannerMainContainer, ContentAreaContainer, WatchButton } from './styles';
+import BackgroundImage from '../../assets/background.png';
+import './index.css';
 
-function getYouTubeId(youtubeURL) {
-  return youtubeURL
-    .replace(
-      /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/,
-      '$7',
-    );
+function BannerMain() {
+  return(
+    <div className='Banner'>
+      <div className='TextBanner'>
+        <h1>
+          Crie suas playlist de vídeos exclusivas!
+        </h1>
+        <p>Com o PlayOn você consegue salvar seus vídeos prediletos e ainda separá-los por categorias</p>
+      </div>
+
+        <img className='BackgroundImage' src={ BackgroundImage } alt='PlayOn background banner'/>
+     </div>
+    )
 }
-
-export default function BannerMain({
-  videoTitle,
-  videoDescription,
-  url,
-}) {
-  const youTubeID = getYouTubeId(url);
-  const bgUrl = `https://img.youtube.com/vi/${youTubeID}/maxresdefault.jpg`;
-
-  return (
-    <BannerMainContainer backgroundImage={bgUrl}>
-      <ContentAreaContainer>
-        <ContentAreaContainer.Item>
-          <ContentAreaContainer.Title>
-            {videoTitle}
-          </ContentAreaContainer.Title>
-
-          <ContentAreaContainer.Description>
-            {videoDescription}
-          </ContentAreaContainer.Description>
-        </ContentAreaContainer.Item>
-
-        <ContentAreaContainer.Item>
-          <VideoIframeResponsive
-            youtubeID={youTubeID}
-          />
-          <WatchButton>
-            Assistir
-          </WatchButton>
-        </ContentAreaContainer.Item>
-      </ContentAreaContainer>
-    </BannerMainContainer>
-  );
-}
+export default BannerMain;
