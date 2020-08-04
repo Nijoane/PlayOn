@@ -24,12 +24,6 @@ a {
   color: inherit;
 } 
 
-#root {
-  min-height: calc(100vh - var(--bodyPaddingTop));
-  display: flex;
-  flex-direction: column;
-}
-
 .PageNotFound{
   display: flex;
   flex-direction: column;
@@ -45,3 +39,10 @@ a {
 .Cartoon{
   padding-top: 5%;
 }
+
+#root {
+  min-height: calc(100vh - var(--bodyPaddingTop));
+  display: flex;
+  flex-direction: column;
+}
+
