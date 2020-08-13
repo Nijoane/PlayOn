@@ -1,14 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Menu from '../../Components/Menu'
 import dadosIniciais from '../../data/dados_iniciais.json';
 import BannerMain from '../../Components/BannerMain';
 import Carousel from '../../Components/Carousel';
 import Footer from '../../Components/Footer';
+import categoriasRepository from '../../Repositories/categorias'
+import PageDefault from "../../Components/PageDefault"
 
 function Home() {
+
+  const [dadosIniciais, setDadosIniciais ] = useState([]);
+
+  useEffect(() => {
+    categoriasRepository.getAllWithVideos()
+      .then((categoriasComVideos) =>{
+
+        setDadosIniciais(categoriasComVideos);
+      })
+
+      .catch((err) => {
+        console.log(err.message);
+      })
+  }, []);
+
   return (
-    <div style={{ background: "#141414" }}>
+    <PageDefault>
       <Menu />
+      
+      {dadosIniciais.length === 0 && (<div>Loading...</div>)}
+
+      {dadosIniciais}
 
       <BannerMain />
 
@@ -38,7 +59,7 @@ function Home() {
       />      
 
       <Footer />
-    </div>
+    </PageDefault>
   );
 }
  export default Home;

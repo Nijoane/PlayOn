@@ -31,7 +31,6 @@ function Carousel({
               <VideoCard
                 videoTitle={video.titulo}
                 videoURL={video.url}
-                categoryColor={categoryColor}
               />
             </SliderItem>
           );
